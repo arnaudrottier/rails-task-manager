@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h1>My tasks</h1>
+    <%= link_to new_task_path do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
+    </div>
+        <% @tasks.each do |task| %>
+          <div class="card">
+            <p><%= link_to task.title, task_path(task) %></p>
+              <i class="<%= task.completed ? 'fa fa-check-square': 'fa fa-square'%>" aria-hidden="true"></i>
+          </div>
+        <% end %>
+    </div>
